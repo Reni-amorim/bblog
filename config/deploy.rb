@@ -1,19 +1,14 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.17.3"
 
-set :application, "bblog"
-set :repo_url, "git@example.com:me/bblog.git"
-
-
 # Change these
 server "18.228.170.74", port: 22, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@github.com:Reni-amorim/bblog.git'
-set :application,     'bblog'
+set :application, "bblog"
+set :repo_url, "git@github.com:Reni-amorim/bblog.git"
+set :branch,        :master
 
-set :rvm_map_bins, %w{gem rake ruby rails bundle}
-set :rvm1_ruby_version, "3.0.0"
-set :default_env, { rvm_bin_path: '~/.rvm/bin' }
+
 
 #set :rbenv_ruby,      '3.0.2'
 # set :rbenv_ruby_dir,  '/home/ubuntu/.rbenv/versions/3.0.2'
@@ -23,6 +18,11 @@ set :default_env, { rvm_bin_path: '~/.rvm/bin' }
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
+
+
+set :rvm_map_bins, %w{gem rake ruby rails bundle}
+set :rvm1_ruby_version, "3.0.0"
+set :default_env, { rvm_bin_path: '~/.rvm/bin' }
 
 # Don't change these unless you know what you're doing
 set :pty,             true
